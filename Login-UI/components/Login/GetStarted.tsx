@@ -6,7 +6,7 @@ import {
 	Platform,
 	Text,
 	TextInput,
-	Button,
+	TouchableOpacity,
 } from "react-native";
 
 export function GetStarted() {
@@ -31,7 +31,9 @@ export function GetStarted() {
 				</View>
 			</View>
 
-			<Button title="Sign Up"></Button>
+			<TouchableOpacity style={button.styles}>
+				<Text style={button.text}>Signup</Text>
+			</TouchableOpacity>
 		</View>
 	);
 }
@@ -73,9 +75,25 @@ const PLATFORM_STYLES = {
 	},
 };
 
+const button = StyleSheet.create({
+	text: {
+		fontSize: 13,
+		color: "white",
+		fontWeight: "bold",
+	},
+	styles: {
+		backgroundColor: "#3A5B22",
+		borderRadius: 10,
+		width: 404,
+		height: 35,
+		justifyContent: "center",
+		alignItems: "center",
+	},
+});
+
 const view = StyleSheet.create({
 	container: {
-		backgroundColor: "blue",
+		backgroundColor: "white",
 		...getPlatformStyles(),
 	},
 	inputContainer: {
@@ -94,8 +112,15 @@ const text = StyleSheet.create({
 		fontSize: 14,
 	},
 	input: {
+		borderWidth: 0.5,
+		borderRadius: 10,
+		borderColor: "#D9D9D9",
 		fontSize: 10,
-	}
+		height: 32,
+		width: 404,
+		paddingLeft: 10,
+		paddingVertical: 10,
+	},
 });
 
 export default GetStarted;
